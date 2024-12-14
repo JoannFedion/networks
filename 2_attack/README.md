@@ -29,7 +29,21 @@ docker compose up --build
 ```
 docker compose exec eve /bin/zsh
 ```
-
+Запустить скрипт '/scripts/startScripts.sh' по запуску настройки (включение форвардинга, ARP Spoofing и подгрузка библиотек для python скрипта)
+```
+cd scripts
+bash startScripts.sh
+```
+В другом окне терминала подключиться также к консоли Eve
+```
+docker compose exec eve /bin/zsh
+```
+Запустить скрипт по модификации пакетов
+```
+python3 interception.py
+```
+Когда в консоли выведется "modified"
+Можно в Wireshark теперь идти и смотреть ответ в Alice.pcap
 ## Путь решения
 
 Предполагается, что при решении задачи будет реализован:
